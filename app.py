@@ -2,7 +2,7 @@ import streamlit as st
 import pickle
 import pandas as pd
 import requests
-import pyfiglet
+
 def fetch_poster(movie_id):
     response = requests.get('https://api.themoviedb.org/3/movie/{}?api_key=647648c3e7d0724fb929d766f7c1e711&language=en-US'.format(movie_id))
     data = response.json()
