@@ -35,29 +35,13 @@ movies =  pd.DataFrame(movies_dict)
 
 similarity = pickle.load(open('similarity.pkl','rb'))
 
-def create_title():
-    title_text = "MovieTrove"
-    font = "slant"  # You can choose different fonts: "slant", "standard", "3-d", etc.
-    title_ascii = pyfiglet.figlet_format(title_text, font=font)
-    return title_ascii
 
-def create_motto():
-    motto_text = "Best Moviees Recommender System Ever"
-    font = "standard"  # You can change the font here too, if you like
-    motto_ascii = pyfiglet.figlet_format(motto_text, font=font)
-    return motto_ascii
 
-def create_initiative_text():
-    initiative_text = "- an initiative by Situ Entertainment Pvt. Ltd."
-    return initiative_text
+centered_text = "<h1 style='text-align: center;'>Movie Trove</h1>"
+st.markdown(centered_text, unsafe_allow_html=True)
 
-def main():
-    st.title(create_title())
-    st.markdown(create_motto())
-    st.write(create_initiative_text().lower())
+st.title('Best Movie Recommender System \n -an initiative by Situ Entertainment Pvt. Ltd.')
 
-if __name__ == "__main__":
-    main()
 
 selected_movie_name = st.selectbox(
     'Select the movie based on which you want recommendation?',
