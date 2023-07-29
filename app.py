@@ -2,7 +2,7 @@ import streamlit as st
 import pickle
 import pandas as pd
 import requests
-
+import pyfiglet
 def fetch_poster(movie_id):
     response = requests.get('https://api.themoviedb.org/3/movie/{}?api_key=647648c3e7d0724fb929d766f7c1e711&language=en-US'.format(movie_id))
     data = response.json()
@@ -35,7 +35,29 @@ movies =  pd.DataFrame(movies_dict)
 
 similarity = pickle.load(open('similarity.pkl','rb'))
 
-st.title('Moviees Recommender System')
+def create_title():
+    title_text = "MovieTrove"
+    font = "slant"  # You can choose different fonts: "slant", "standard", "3-d", etc.
+    title_ascii = pyfiglet.figlet_format(title_text, font=font)
+    return title_ascii
+
+def create_motto():
+    motto_text = "Best Moviees Recommender System Ever"
+    font = "standard"  # You can change the font here too, if you like
+    motto_ascii = pyfiglet.figlet_format(motto_text, font=font)
+    return motto_ascii
+
+def create_initiative_text():
+    initiative_text = "- an initiative by Situ Entertainment Pvt. Ltd."
+    return initiative_text
+
+def main():
+    st.title(create_title())
+    st.markdown(create_motto())
+    st.write(create_initiative_text().lower())
+
+if __name__ == "__main__":
+    main()
 
 selected_movie_name = st.selectbox(
     'Select the movie based on which you want recommendation?',
