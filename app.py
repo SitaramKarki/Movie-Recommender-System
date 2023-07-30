@@ -37,7 +37,7 @@ similarity = pickle.load(open('similarity.pkl','rb'))
 
 
 
-centered_text = "<h1 style='text-align: center;'>Movie Trove</h1>"
+centered_text = "<h1 style='text-align: center;'>Film Fusion</h1>"
 st.markdown(centered_text, unsafe_allow_html=True)
 
 st.title('Best Movie Recommender System \n -an initiative by Situ Entertainment Pvt. Ltd.')
